@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>ShowTest</h1>
+  <div class="mb-3">
+    <h2><%= @task.title %></h2>
+    <p>TodoOrNotTodo - <%= @task.details %></p>
+    <p>TaskStatus - <%= @task.completed %></p>
+    <%= link_to 'Back to the Future', '/tasks' %>
+  </div>
+  <div class="mb-3">
+    <%= link_to 'Edit a Task', task_edit_path(@task) %>
+  </div>
+    <%= link_to "Delete",
+    task_path(@task),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+</div>
